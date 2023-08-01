@@ -1,0 +1,19 @@
+﻿@model Appointment
+
+<h3>@Model.ApptID Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Appointment ID</th>
+        <th>Apointment</th>
+        <th>PatientID</th>
+        <th>PHysicianID</th>
+    </tr>
+
+    <tr>
+        <td>@Model.ApptID</td>
+        <td>@Model.appointment</td>
+        <td>@Model.PatientID</td>
+        <td>@Model.PhysicianID</td>
+    </tr>
+</table>

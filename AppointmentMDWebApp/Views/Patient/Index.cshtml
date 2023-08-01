@@ -1,0 +1,26 @@
+﻿@model IEnumerable<Patient>
+
+    <h2>Patients</h2>
+
+    <table class="table">
+        <tr>
+            <th>PatientID</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Diagnosis</th>
+            <th>PhysicianID</th>
+        </tr>
+
+    @foreach(var patient in Model)
+    {
+        <tr>
+            <th>@patient.PatientID</th>
+            <th>@patient.Name</th>
+            <th>@patient.Age</th>
+            <th>@patient.Gender</th>
+            <th>@patient.Diagnosis</th>
+            <th>@patient.PhysicianID</th>
+        </tr>
+    }
+</table>

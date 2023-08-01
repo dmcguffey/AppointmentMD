@@ -1,0 +1,23 @@
+﻿@model IEnumerable<Appointment>
+
+    <h2>Appointments</h2>
+
+    <table class="table">
+        <tr>
+            <th>ApptID</th>
+            <th>Appointment</th>
+            <th>Patient ID</th>
+            <th>Physician ID</th>
+        </tr>
+
+    @foreach (var appointment in @Model)
+    {
+        <tr>
+            <th><a href=/Appointment/ViewAppointment/@appointment.ApptID>@appointment.ApptID</a></th>
+            <th>@appointment.appointment</th>
+            <th>@appointment.PatientID</th>
+            <th>@appointment.PhysicianID</th>
+        </tr>
+    }
+
+    </table>
