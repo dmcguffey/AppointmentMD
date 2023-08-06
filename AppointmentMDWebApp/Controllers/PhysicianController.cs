@@ -20,5 +20,11 @@ namespace AppointmentMDWebApp.Controllers
             var physicians = repo.GetPhysicians();
             return View(physicians);
         }
+
+        public IActionResult ViewPhysician(int id)
+        {
+            var physician = repo.GetPhysician(id);
+            return View(physician);
+        }
     }
 }

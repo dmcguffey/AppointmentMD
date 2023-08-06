@@ -2,10 +2,15 @@
 
     <h2>Appointments</h2>
 
+    <div style="display: block">
+        <a href="/Appointment/MakeAppointment/">Make a new Appointment</a>
+    </div>
+
     <table class="table">
         <tr>
-            <th>ApptID</th>
+            <th>Appt ID</th>
             <th>Appointment</th>
+            <th>End time</th>
             <th>Patient ID</th>
             <th>Physician ID</th>
         </tr>
@@ -15,6 +20,7 @@
         <tr>
             <th><a href=/Appointment/ViewAppointment/@appointment.ApptID>@appointment.ApptID</a></th>
             <th>@appointment.appointment</th>
+            <th>@appointment.appointmentEnd</th>
             <th>@appointment.PatientID</th>
             <th>@appointment.PhysicianID</th>
         </tr>

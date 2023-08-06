@@ -1,0 +1,23 @@
+﻿@model Appointment
+
+<h2>@Model.ApptID Edit Appointment</h2>
+
+@using (Html.BeginForm("UpdateAppointmentToDatabase", "Appointment", "Post"))
+{
+    <input asp-for="ApptID" type="hidden" value="@Model.ApptID" />
+
+    <label asp-for="appointment" class="control-label">Start Time</label>
+    <input type="datetime-local" asp-for="appointment" class="form-control" value="@Model.appointment" />
+
+    <label asp-for="appointmentEnd" class="control-label">Appointment End</label>
+    <input type="datetime-local" asp-for="appointmentEnd" class="form-control" value="@Model.appointmentEnd" />
+
+    <label asp-for="PatientID" class="control-label">Patient ID</label>
+    <input type="number" asp-for="PatientID" class="form-control" value="@Model.PatientID" />
+
+    <label asp-for="PhysicianID" class="control-label">Physician ID</label>
+    <input type="number" asp-for="PhysicianID" class="form-control" value="@Model.PhysicianID" />
+
+    <input type="submit" value="Update Appointment" class="btn btn-primary" />
+}
+

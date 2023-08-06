@@ -4,20 +4,22 @@
 
     <table class="table">
         <tr>
-            <th>PatientID</th>
+            <th>Patient ID</th>
             <th>Name</th>
             <th>Age</th>
+            <th>Date of Birth</th>
             <th>Gender</th>
             <th>Diagnosis</th>
-            <th>PhysicianID</th>
+            <th>Physician ID</th>
         </tr>
 
     @foreach(var patient in Model)
     {
         <tr>
-            <th>@patient.PatientID</th>
-            <th>@patient.Name</th>
+            <th><a href=/Patient/ViewPatient/@patient.PatientID>@patient.PatientID</a></th>
+            <th><a href=/Patient/ViewPatient/@patient.PatientID>@patient.Name</a></th>
             <th>@patient.Age</th>
+            <th>@patient.DateOfBirth.ToString("MM-dd-yyyy")</th>
             <th>@patient.Gender</th>
             <th>@patient.Diagnosis</th>
             <th>@patient.PhysicianID</th>

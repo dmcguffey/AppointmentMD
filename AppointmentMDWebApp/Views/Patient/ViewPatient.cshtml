@@ -1,0 +1,25 @@
+﻿@model Patient
+
+<h3>@Model.Name Information</h3>
+
+<table class="table">
+    <tr>
+        <th>Patient ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Date of Birth</th>
+        <th>Gender</th>
+        <th>Diagnosis</th>
+        <th>Physician ID</th>
+    </tr>
+
+    <tr>
+        <td>@Model.PatientID</td>
+        <td>@Model.Name</td>
+        <td>@Model.Age  </td>
+        <th>@Model.DateOfBirth.ToString("MM-dd-yyyy")</th>
+        <td>@Model.Gender</td>
+        <td>@Model.Diagnosis</td>
+        <td>@Model.PhysicianID</td>
+    </tr>
+</table>

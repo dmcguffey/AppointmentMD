@@ -4,7 +4,7 @@
 
 <table class="table">
     <tr>
-        <th>PhysicianID</th>
+        <th>Physician ID</th>
         <th>Name</th>
         <th>Specialty</th>
         <th>Location</th>
@@ -13,7 +13,7 @@
     @foreach (var physician in @Model)
     {
         <tr>
-            <th>@physician.PhysicianID</th>
+            <th><a href=/Physician/ViewPhysician/@physician.PhysicianID>@physician.PhysicianID</a></th>
             <th>@physician.Name</th>
             <th>@physician.Specialty</th>
             <th>@physician.Location</th>

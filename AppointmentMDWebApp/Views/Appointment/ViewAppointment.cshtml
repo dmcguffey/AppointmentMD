@@ -1,19 +1,33 @@
 ﻿@model Appointment
 
-<h3>@Model.ApptID Information</h3>
+<h2>@Model.ApptID Appointment Information</h2>
 
 <table class="table">
     <tr>
         <th>Appointment ID</th>
         <th>Apointment</th>
-        <th>PatientID</th>
-        <th>PHysicianID</th>
+        <th>End time</th>
+        <th>Patient ID</th>
+        <th>Physician ID</th>
     </tr>
 
     <tr>
         <td>@Model.ApptID</td>
         <td>@Model.appointment</td>
+        <td>@Model.appointmentEnd</td>
         <td>@Model.PatientID</td>
         <td>@Model.PhysicianID</td>
     </tr>
 </table>
+
+<div style="display: block">
+    <a href="/Appointment/UpdateAppointment/@Model.ApptID">Update Appointment</a>
+</div>
+
+<div style="display: block">
+    @using (Html.BeginForm("DeleteAppointment", "Appointment", "Post"))
+    {
+        <input type="hidden" asp-for="ApptID" value="@Model.ApptID" />
+        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Appointment" />
+    }
+</div>

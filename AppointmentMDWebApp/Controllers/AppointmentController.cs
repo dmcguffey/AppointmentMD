@@ -27,5 +27,62 @@ namespace AppointmentMDWebApp.Controllers
             var appointment = repo.GetAppointment(id);
             return View(appointment);
         }
+
+        public IActionResult UpdateAppointment(int id)
+        {
+            Appointment appt = repo.GetAppointment(id);
+            if (appt == null)
+            {
+                return View("ProductNotFound");
+            }
+            return View(appt);
+        }
+
+        public IActionResult UpdateAppointmentToDatabase(Appointment appointment)
+        {
+            repo.UpdateAppointment(appointment);
+            return RedirectToAction("ViewAppointment", new { id = appointment.ApptID });
+            /*if (ModelState.IsValid)
+            {
+                try
+                {
+                    repo.UpdateAppointment(appointment);
+                    TempData["Message"] = "Appointment updated successfully.";
+
+                    // Reload the updated appointment from the database to get the latest data
+                    Appointment reloadedAppointment = repo.GetAppointment(appointment.ApptID);
+                    return View("ViewAppointment", reloadedAppointment);
+                }
+                catch (Exception ex)
+                {
+                    TempData["Error"] = "An error occurred while updating the appointment.";
+                }
+            }
+            else
+            {
+                TempData["Error"] = "Invalid data. Please check the input fields.";
+            }
+
+            // If there was an error or ModelState is not valid, return to the same view
+            return View("ViewAppointment", appointment);*/
+        }
+
+        public IActionResult MakeAppointment()
+        {
+            var appt = repo.AssignPhysician();
+            return View(appt);
+        }
+
+        public IActionResult InsertAppointmentToDatabase(Appointment newAppointment)
+        {
+            repo.MakeAppointment(newAppointment);
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult DeleteAppointment(Appointment appointment) 
+        {
+            repo.DeleteAppointment(appointment);
+            return RedirectToAction("Index");
+        }
     }
 }

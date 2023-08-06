@@ -1,0 +1,30 @@
+﻿@model Appointment
+
+<h2>Make an Appointment</h2>
+
+@using (Html.BeginForm("InsertAppointmentToDatabase", "Appointment", "Post"))
+{
+    <input asp-for="ApptID" type="hidden" value="" />
+
+    <label asp-for="appointment" class="control-lable">Appointment Date</label>
+    <input type="datetime-local" name="appointment" class="form-control" value="" />
+
+    <label asp-for="appointmentEnd" class="control-lable">EndTime</label>
+    <input type="datetime-local" name="appointmentEnd" class="form-control" value="" />
+
+    <label asp-for="PatientID" class="control-label" >Patient ID </label>
+    <input type="number" name="patientID" class="form-control" />
+
+    <div class="form-group">
+        <label for="">Select a Physician</label>
+        <select class="form-control" name="physicianID" value"">
+            @foreach (var physician in Model.Physicians)
+            {
+                <option value="@physician.PhysicianID">@physician.PhysicianID @physician.Name</option>
+            }
+        </select>
+    </div>
+
+    <input type="submit" value="Make Appointment" class="btn btn-primary" />
+
+}
