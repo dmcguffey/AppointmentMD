@@ -38,33 +38,10 @@ namespace AppointmentMDWebApp.Controllers
             return View(appt);
         }
 
-        public IActionResult UpdateAppointmentToDatabase(Appointment appointment)
+        public IActionResult UpdateAppointmentToDatabase(Appointment Updatedappointment)
         {
-            repo.UpdateAppointment(appointment);
-            return RedirectToAction("ViewAppointment", new { id = appointment.ApptID });
-            /*if (ModelState.IsValid)
-            {
-                try
-                {
-                    repo.UpdateAppointment(appointment);
-                    TempData["Message"] = "Appointment updated successfully.";
-
-                    // Reload the updated appointment from the database to get the latest data
-                    Appointment reloadedAppointment = repo.GetAppointment(appointment.ApptID);
-                    return View("ViewAppointment", reloadedAppointment);
-                }
-                catch (Exception ex)
-                {
-                    TempData["Error"] = "An error occurred while updating the appointment.";
-                }
-            }
-            else
-            {
-                TempData["Error"] = "Invalid data. Please check the input fields.";
-            }
-
-            // If there was an error or ModelState is not valid, return to the same view
-            return View("ViewAppointment", appointment);*/
+            repo.UpdateAppointment(Updatedappointment);
+            return RedirectToAction("ViewAppointment", new {id = Updatedappointment.ApptID});
         }
 
         public IActionResult MakeAppointment()

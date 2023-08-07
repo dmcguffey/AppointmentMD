@@ -18,8 +18,8 @@ namespace AppointmentMDWebApp
 
         public void MakeAppointment(Appointment appointment)
         {
-            _conn.Execute("INSERT INTO appointments (appointment, appointmentEnd, patientID, physicianID) VALUES(@appointment,@appointmentEnd,@patientID, @physicianID);",
-                new {appointment = appointment.appointment, appointmentEnd = appointment.appointmentEnd, patientID = appointment.PatientID, physicianID = appointment.PhysicianID });
+            _conn.Execute("INSERT INTO appointments (AppointmentStart, appointmentEnd, PatientID, PhysicianID) VALUES(@AppointmentStart,@AppointmentEnd,@PatientID, @PhysicianID);",
+                new {AppointmentStart = appointment.AppointmentStart, appointmentEnd = appointment.AppointmentEnd, PatientID = appointment.PatientID, PhysicianID = appointment.PhysicianID });
         }
 
         public Appointment GetAppointment(int id)
@@ -34,8 +34,15 @@ namespace AppointmentMDWebApp
 
         public void UpdateAppointment(Appointment appointment)
         {
-            _conn.Execute("UPDATE appointments SET appointment = @appointment, appointmentEnd = @appointmentEnd, patientID = @PatientID, PhysicianID = @physicianID WHERE ApptID = @ApptID;",
-                new { appointment = appointment.appointment, appointmentEnd = appointment.appointmentEnd, PatientID = appointment.PatientID, physicianID = appointment.PhysicianID, ApptID = appointment.ApptID });
+            try
+            {
+                _conn.Execute("UPDATE appointments SET AppointmentStart = @AppointmentStart, AppointmentEnd = @AppointmentEnd, PatientID = @PatientID, PhysicianID = @PhysicianID WHERE ApptID = @ApptID;",
+                new { AppointmentStart = appointment.AppointmentStart, AppointmentEnd = appointment.AppointmentEnd, PatientID = appointment.PatientID, PhysicianID = appointment.PhysicianID, ApptID = appointment.ApptID });
+            }
+            catch (Exception ex)
+            {
+                _conn.Query<Appointment>("SELECT * FROM appointments;");
+            }
         }
 
         public IEnumerable<Physician> GetPhysicians()
