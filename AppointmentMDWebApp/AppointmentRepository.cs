@@ -29,7 +29,7 @@ namespace AppointmentMDWebApp
 
         public IEnumerable<Appointment> GetAppointments()
         {
-            return _conn.Query<Appointment>("SELECT * FROM appointments;");
+            return _conn.Query<Appointment>("SELECT * FROM appointments ORDER BY AppointmentStart;");
         }
 
         public void UpdateAppointment(Appointment appointment)

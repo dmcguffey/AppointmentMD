@@ -1,8 +1,8 @@
 ﻿@model Patient
 
-<h3>@Model.Name Information</h3>
+<h3>Patient Information</h3>
 
-<table class="table">
+<table class="table" style="color:white">
     <tr>
         <th>Patient ID</th>
         <th>Name</th>
@@ -17,9 +17,9 @@
         <td>@Model.PatientID</td>
         <td>@Model.Name</td>
         <td>@Model.Age  </td>
-        <th>@Model.DateOfBirth.ToString("MM-dd-yyyy")</th>
+        <td>@Model.DateOfBirth.ToString("MM/dd/yyyy")</td>
         <td>@Model.Gender</td>
         <td>@Model.Diagnosis</td>
-        <td>@Model.PhysicianID</td>
+        <td><a href=/Physician/ViewPhysician/@Model.PhysicianID>@Model.PhysicianID</a></td>
     </tr>
 </table>

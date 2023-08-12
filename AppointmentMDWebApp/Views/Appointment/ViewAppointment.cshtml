@@ -2,7 +2,8 @@
 
 <h2>@Model.ApptID Appointment Information</h2>
 
-<table class="table">
+
+<table class="table" style="color: white">
     <tr>
         <th>Appointment ID</th>
         <th>Apointment</th>
@@ -13,14 +14,15 @@
 
     <tr>
         <td>@Model.ApptID</td>
-        <td>@Model.AppointmentStart</td>
-        <td>@Model.AppointmentEnd</td>
-        <td>@Model.PatientID</td>
-        <td>@Model.PhysicianID</td>
+        <td>@Model.AppointmentStart.ToString("MM/dd/yyyy HH:mm")</td>
+        <td>@Model.AppointmentEnd.ToString("MM/dd/yyyy HH:mm")</td>
+        <td><a href=/Patient/ViewPatient/@Model.PatientID>@Model.PatientID</a></td>
+        <td><a href=/Physician/ViewPhysician/@Model.PhysicianID>@Model.PhysicianID</a></td>
     </tr>
 </table>
 
-<div style="display: block">
+<div style="display: inline-block;">
+
     <a href="/Appointment/UpdateAppointment/@Model.ApptID">Update Appointment</a>
 </div>
 
@@ -28,6 +30,6 @@
     @using (Html.BeginForm("DeleteAppointment", "Appointment", "Post"))
     {
         <input type="hidden" asp-for="ApptID" value="@Model.ApptID" />
-        <input type="submit" onclick="return confirm('Are you sure?')" value="Delete this Appointment" />
+        <input type="submit" onclick="return confirm('You are about to remove this appointment from the database. Click Yes to confirm delete.')" value="Delete this Appointment" />
     }
 </div>

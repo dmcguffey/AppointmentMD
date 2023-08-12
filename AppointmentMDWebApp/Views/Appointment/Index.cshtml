@@ -1,16 +1,16 @@
 ﻿@model IEnumerable<Appointment>
 
+
     <h2>Appointments</h2>
 
-    <div style="display: block">
+    <div style="display: table-cell; color: white">
         <a href="/Appointment/MakeAppointment/">Make a new Appointment</a>
     </div>
 
-    <table class="table">
+    <table class="table" style="color: white">
         <tr>
             <th>Appt ID</th>
-            <th>Appointment Start</th>
-            <th>Appointment End</th>
+            <th>Appointment</th>
             <th>Patient ID</th>
             <th>Physician ID</th>
         </tr>
@@ -18,11 +18,10 @@
     @foreach (var appointment in @Model)
     {
         <tr>
-            <th><a href=/Appointment/ViewAppointment/@appointment.ApptID>@appointment.ApptID</a></th>
-            <th>@appointment.AppointmentStart</th>
-            <th>@appointment.AppointmentEnd</th>
-            <th>@appointment.PatientID</th>
-            <th>@appointment.PhysicianID</th>
+            <td><a href=/Appointment/ViewAppointment/@appointment.ApptID>@appointment.ApptID</a></td>
+            <td>@appointment.AppointmentStart.ToString("MM/dd/yyyy HH:mm")</td>
+            <td><a href=/Patient/ViewPatient/@appointment.PatientID>@appointment.PatientID</a></td>
+            <td><a href=/Physician/ViewPhysician/@appointment.PhysicianID>@appointment.PhysicianID</a></td>
         </tr>
     }
 

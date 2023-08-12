@@ -7,10 +7,10 @@
     <input asp-for="ApptID" type="hidden" value="@Model.ApptID" />
 
     <label asp-for="AppointmentStart" class="control-label">Start Time</label>
-    <input type="datetime" asp-for="AppointmentStart" class="form-control" value="@Model.AppointmentStart" />
+    <input type="datetime-local" asp-for="AppointmentStart" class="form-control" value="@Model.AppointmentStart" />
 
     <label asp-for="AppointmentEnd" class="control-label">Appointment End</label>
-    <input type="datetime" asp-for="AppointmentEnd" class="form-control" value="@Model.AppointmentEnd" />
+    <input type="datetime-local" asp-for="AppointmentEnd" class="form-control" value="@Model.AppointmentEnd" />
 
     <label asp-for="PatientID" class="control-label">Patient ID</label>
     <input type="number" asp-for="PatientID" class="form-control" value="@Model.PatientID" />
