@@ -1,0 +1,29 @@
+﻿@model IEnumerable<Appointment>
+
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
+<h2>Physician's Appointments</h2>
+
+<div style="display: table-cell">
+    <a href="/Appointment/MakeAppointment/">Make a new Appointment</a>
+</div>
+
+<table class="table">
+    <tr>
+        <th>PhysicianID</th>
+        <th>Appt ID</th>
+        <th>Appointment</th>
+        <th>Patient ID</th>
+    </tr>
+
+    @foreach (var appointment in @Model)
+    {
+        <tr>
+            <td><a href=/Physician/ViewPhysician/@appointment.PhysicianID>@appointment.PhysicianID</a></td>
+            <td><a href=/Appointment/ViewAppointment/@appointment.ApptID>@appointment.ApptID</a></td>
+            <td>@appointment.AppointmentStart.ToString("MM/dd/yyyy HH:mm")</td>
+            <td><a href=/Patient/ViewPatient/@appointment.PatientID>@appointment.PatientID</a></td>
+        </tr>
+    }
+
+</table>

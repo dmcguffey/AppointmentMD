@@ -41,7 +41,7 @@ namespace AppointmentMDWebApp.Controllers
         public IActionResult UpdateAppointmentToDatabase(Appointment Updatedappointment)
         {
             repo.UpdateAppointment(Updatedappointment);
-            return RedirectToAction("ViewAppointment", new {id = Updatedappointment.ApptID});
+            return RedirectToAction("ViewAppointment", new { id = Updatedappointment.ApptID });
         }
 
         public IActionResult MakeAppointment()
@@ -56,10 +56,16 @@ namespace AppointmentMDWebApp.Controllers
             return RedirectToAction("Index");
         }
 
-        public IActionResult DeleteAppointment(Appointment appointment) 
+        public IActionResult DeleteAppointment(Appointment appointment)
         {
             repo.DeleteAppointment(appointment);
             return RedirectToAction("Index");
+        }
+
+        public IActionResult ViewPhysicianAppointments(int PhysicianID)
+        {
+            var PhysicianAppointments = repo.GetPhysicianAppointments(PhysicianID);
+            return View(PhysicianAppointments);
         }
     }
 }

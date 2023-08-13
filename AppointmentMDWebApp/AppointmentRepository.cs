@@ -19,7 +19,7 @@ namespace AppointmentMDWebApp
         public void MakeAppointment(Appointment appointment)
         {
             _conn.Execute("INSERT INTO appointments (AppointmentStart, appointmentEnd, PatientID, PhysicianID) VALUES(@AppointmentStart,@AppointmentEnd,@PatientID, @PhysicianID);",
-                new {AppointmentStart = appointment.AppointmentStart, appointmentEnd = appointment.AppointmentEnd, PatientID = appointment.PatientID, PhysicianID = appointment.PhysicianID });
+                new { AppointmentStart = appointment.AppointmentStart, appointmentEnd = appointment.AppointmentEnd, PatientID = appointment.PatientID, PhysicianID = appointment.PhysicianID });
         }
 
         public Appointment GetAppointment(int id)
@@ -62,5 +62,12 @@ namespace AppointmentMDWebApp
         {
             _conn.Execute("DELETE FROM appointments WHERE ApptID = @ApptID;", new { ApptID = appointment.ApptID });
         }
+
+        public IEnumerable<Appointment> GetPhysicianAppointments (int id)
+        {
+            return _conn.Query<Appointment>("SELECT * FROM appointments where PhysicianID = @id", new { id = id });
+        }
+
+
     }
 }

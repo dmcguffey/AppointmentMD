@@ -20,5 +20,6 @@ namespace AppointmentMDWebApp
 
         public void DeleteAppointment(Appointment appointment);
 
+        public IEnumerable<Appointment> GetPhysicianAppointments(int id);
     }
 }

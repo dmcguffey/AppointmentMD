@@ -1,13 +1,26 @@
 ﻿@model IEnumerable<Appointment>
 
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+
 
     <h2>Appointments</h2>
 
-    <div style="display: table-cell; color: white">
+    <div style="display: table-cell">
         <a href="/Appointment/MakeAppointment/">Make a new Appointment</a>
     </div>
 
-    <table class="table" style="color: white">
+@using (Html.BeginForm("ViewPhysicianAppointments", "Appointment", FormMethod.Get))
+{
+    <label for="PhysicianID">Physician ID:</label>
+    <input type="number" id="PhysicianID" name="PhysicianID">
+    <button type="submit">Filter Appointments</button>
+}
+
+<div id="appointments"></div>
+
+<script src="~/js/site.js"></script>
+
+    <table class="table">
         <tr>
             <th>Appt ID</th>
             <th>Appointment</th>
