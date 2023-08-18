@@ -15,15 +15,8 @@
     <label asp-for="PatientID" class="control-label">Patient ID</label>
     <input type="number" asp-for="PatientID" class="form-control" value="@Model.PatientID" />
 
-    <div class="form-group">
-        <label for="">Select a Physician</label>
-        <select class="form-control" name="PhysicianID" value"">
-            @foreach (var physician in Model.Physicians)
-            {
-                <option value="@physician.PhysicianID">@physician.PhysicianID @physician.Name</option>
-            }
-        </select>
-    </div>
+    <label asp-for="PhysicianID" class="control-label">Physician ID</label>
+    <input type="number" asp-for="PhysicianID" class="form-control" value="@Model.PhysicianID" />
 
     <input type="submit" value="Update Appointment" class="btn btn-primary" />
 }

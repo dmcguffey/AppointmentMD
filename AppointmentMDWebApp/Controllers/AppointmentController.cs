@@ -33,7 +33,7 @@ namespace AppointmentMDWebApp.Controllers
             Appointment appt = repo.GetAppointment(id);
             if (appt == null)
             {
-                return View("ProductNotFound");
+                return View("Appointment does not exist.");
             }
             return View(appt);
         }

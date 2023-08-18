@@ -1,0 +1,26 @@
+﻿@model Patient
+
+<h2>@Model.PatientID Edit Patient Information</h2>
+
+@using (Html.BeginForm("UpdatePatientToDatabase", "Patient", "Post"))
+{
+    <input asp-for="PatientID" type="hidden" value="@Model.PatientID" />
+
+    <label asp-for="Name" class="control-label">Name</label>
+    <input type="text" asp-for="Name" class="form-control" value="@Model.Name" />
+
+    <label asp-for="DateOfBirth" class="control-label">Date of Birth</label>
+    <input type="date" asp-for="DateOfBirth" class="form-control" value="@Model.DateOfBirth" />
+
+    <label asp-for="Gender" class="control-label">Gender</label>
+    <input type="text" asp-for="Gender" class="form-control" value="@Model.Gender" />
+
+    <label asp-for="Diagnosis" class="control-label">Diagnosis</label>
+    <input type="text" asp-for="Diagnosis" class="form-control" value="@Model.Diagnosis" />
+
+    <label asp-for="PhysicianID" class="control-label">Physician ID</label>
+    <input type="number" asp-for="PhysicianID" class="form-control" value="@Model.PhysicianID" />
+
+    <input type="submit" value="Update Patient" class="btn btn-primary" />
+}
+

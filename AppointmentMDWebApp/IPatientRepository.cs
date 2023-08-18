@@ -9,5 +9,7 @@ namespace AppointmentMDWebApp
         public IEnumerable<Patient> GetPatients();
 
         public Patient GetPatient(int id);
+
+        public void UpdatePatient(Patient patient);
     }
 }
