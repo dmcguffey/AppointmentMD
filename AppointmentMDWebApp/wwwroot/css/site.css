@@ -27,3 +27,14 @@ body {
 .button{
     background-color: transparent;
 }
+
+#ApptMDimage{
+    height: 400px;
+    width: auto;
+}
+
+a {
+    font: bold;
+    text-decoration: none;
+    color: black;
+}
