@@ -7,17 +7,16 @@
     <input asp-for="ApptID" type="hidden" value="@Model.ApptID" />
 
     <label asp-for="AppointmentStart" class="control-label">Start Time</label>
-    <input type="datetime-local" class="form-control" value="@Model.AppointmentStart.ToString("yyyy-MM-ddTHH:mm")" />
+    <input asp-for="AppointmentStart" type="datetime-local" class="form-control" value="@Model.AppointmentStart.ToString("yyyy-MM-ddTHH:mm")" />
 
     <label asp-for="AppointmentEnd" class="control-label">Appointment End</label>
-    <input type="datetime-local" class="form-control" value="@Model.AppointmentEnd.ToString("yyyy-MM-ddTHH:mm")" />
-
+    <input asp-for="AppointmentEnd" type="datetime-local" class="form-control" value="@Model.AppointmentEnd.ToString("yyyy-MM-ddTHH:mm")" />
 
     <label asp-for="PatientID" class="control-label">Patient ID</label>
-    <input type="number" class="form-control" value="@Model.PatientID" />
+    <input asp-for="PatientID" type="number" class="form-control" value="@Model.PatientID" />
 
     <label asp-for="PhysicianID" class="control-label">Physician ID</label>
-    <input type="number" class="form-control" value="@Model.PhysicianID" />
+    <input asp-for="PhysicianID" type="number" class="form-control" value="@Model.PhysicianID" />
 
     <input type="submit" value="Update Appointment" class="btn btn-primary" />
 }

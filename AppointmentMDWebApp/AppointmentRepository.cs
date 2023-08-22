@@ -34,15 +34,8 @@ namespace AppointmentMDWebApp
 
         public void UpdateAppointment(Appointment appointment)
         {
-            try
-            {
-                _conn.Execute("UPDATE appointments SET AppointmentStart = @AppointmentStart, AppointmentEnd = @AppointmentEnd, PatientID = @PatientID, PhysicianID = @PhysicianID WHERE ApptID = @ApptID;",
-                new { AppointmentStart = appointment.AppointmentStart, AppointmentEnd = appointment.AppointmentEnd, PatientID = appointment.PatientID, PhysicianID = appointment.PhysicianID, ApptID = appointment.ApptID });
-            }
-            catch (Exception ex)
-            {
-                _conn.Query<Appointment>("SELECT * FROM appointments;");
-            }
+            _conn.Execute("UPDATE appointments SET AppointmentStart = @AppointmentStart, AppointmentEnd = @AppointmentEnd, PatientID = @PatientID, PhysicianID = @PhysicianID WHERE ApptID = @ApptID;",
+            new { AppointmentStart = appointment.AppointmentStart, AppointmentEnd = appointment.AppointmentEnd, PatientID = appointment.PatientID, PhysicianID = appointment.PhysicianID, ApptID = appointment.ApptID });
         }
 
         public IEnumerable<Physician> GetPhysicians()
