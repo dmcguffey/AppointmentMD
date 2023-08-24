@@ -13,11 +13,11 @@
         <nav class="nav">
             <div class="container-fluid">
                 <a class="navbar-brand text-black" asp-area="" asp-controller="Home" asp-action="Index">AppointmentMD</a>
-                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation"> Navigate
+                <button class="navbar-toggler" id="navToggleBtn" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation" style="overflow: hidden;"> Navigate
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse">
+                <div class="navbar-collapse collapsed hide" id="navbar">
                     <ul class="navbar-nav">
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>

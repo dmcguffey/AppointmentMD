@@ -7,6 +7,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const filterForm = document.getElementById('filterForm');
     const appointmentsDiv = document.getElementById('appointments');
 
+    let navbar = document.getElementById("navbar");
+    let navButton = document.getElementById("navToggleBtn");
+    let toggle = false;
+
+  
+    navButton.addEventListener('click', () => {
+        if (toggle === false) {
+            navbar.classList.remove("hide");
+            toggle = true;
+        } else {
+            navbar.classList.add("hide");
+            toggle = false;
+        }
+        
+    })
+
     filterForm.addEventListener('submit', async (event) => {
         event.preventDefault();
 
