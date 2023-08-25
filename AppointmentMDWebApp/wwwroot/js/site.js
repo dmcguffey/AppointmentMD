@@ -38,5 +38,6 @@ document.addEventListener('DOMContentLoaded', () => {
             </ul>
         `;
     });
+
 });
 

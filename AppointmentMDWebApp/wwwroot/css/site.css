@@ -29,20 +29,34 @@ body {
 }
 
 #ApptMDimage{
-    height: 400px;
-    width: auto;
+    height: 500px;
+    width: 1200px;
+    object-fit: cover;
+    object-position: center;
 }
 
 a {
-    font: bold;
+    font-size:large;
     text-decoration: none;
     color: black;
 }
 
-nav {
-
-}
 
 .hide {
     display:none;
+}
+
+#Button{
+    display:block;
+    border:double;
+    background-color: lightblue;
+    width:189px;
+}
+
+#AppointmentClick{
+    display:block;
+    border:solid;
+    background-color:lightblue;
+    font:500;
+    
 }

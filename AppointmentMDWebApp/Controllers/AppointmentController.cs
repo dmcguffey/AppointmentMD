@@ -41,7 +41,7 @@ namespace AppointmentMDWebApp.Controllers
         public IActionResult UpdateAppointmentToDatabase(Appointment Updatedappointment)
         {
             repo.UpdateAppointment(Updatedappointment);
-            return RedirectToAction("ViewAppointment", new { id = Updatedappointment.ApptID });
+            return RedirectToAction("Index", new { id = Updatedappointment.ApptID });
         }
 
         public IActionResult MakeAppointment()
