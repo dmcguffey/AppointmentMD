@@ -40,7 +40,7 @@
                     @using (Html.BeginForm("DeleteAppointment", "Appointment", "Post"))
                     {
                         <input type="hidden" asp-for="@appointment.ApptID" value="@appointment.ApptID"/>
-                        <input id="Button" type="submit" onclick="return confirm('You are about to remove this appointment from the database. Click Yes to confirm delete.')" value="Delete this Appointment" />
+                        <input id="Button" type="submit" onclick="return confirm('You are about to remove this appointment from the database. Click Yes to confirm delete.')" value="Delete Appointment" />
                     }
                 </div>
                 <div id="Button">

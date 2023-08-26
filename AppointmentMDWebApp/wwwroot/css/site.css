@@ -36,7 +36,6 @@ body {
 }
 
 a {
-    font-size:large;
     text-decoration: none;
     color: black;
 }
@@ -51,6 +50,7 @@ a {
     border:double;
     background-color: lightblue;
     width:189px;
+    text-align: center;
 }
 
 #AppointmentClick{
